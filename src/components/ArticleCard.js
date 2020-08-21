@@ -1,9 +1,9 @@
 import React from 'react';
 
 const ArticleCard = ({title, description, link, created_at, author}) => {
-  const handleClick = (event) => {
+  // const handleClick = (event) => {
 
-  }
+  // }
 
   return (
     <section>

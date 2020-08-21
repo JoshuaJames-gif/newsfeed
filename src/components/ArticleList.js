@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
+import ArticleCard from './ArticleCard'
 
 class ArticleList extends React.Component {
   
   state = {
     isOpen: false,
-    articles: [{
+    articles: 
+    {
       title: "Creation timelines for the standard",
-      description: "Nullam euismod sodales venenatis. Morbi ultrices.",
+      description: "Nullam euismod sodales venenatis.Morbi ultrices.",
       author: "Josh",
       created_at: '20 August 2020',
       link: "https://www.bbc.co.uk/news/technology-53849920"
@@ -18,29 +20,25 @@ class ArticleList extends React.Component {
       created_at: '21 August 2020',
       link: "https://www.bbc.co.uk/news/education-49249684"
     },
-    ]
+    
   };
-  
-  toggleVisibility = (clickEvent) => {
-    this.setState((currentState) => {
+  // toggleVisibility = (clickEvent) => {
+    //   this.setState((currentState) => {
+      
+      //      const newVisibility = !currentState.isOpen;
+      //      return { ...currentState,isOpen: newVisibility }
+      //   })
+      // }
+      
+      render() {
+       const   articleArray = Object.entries(this.state.articles)
+       console.log(articleArray)
 
-       const newVisibility = !currentState.isOpen;
-       return { ...currentState,isOpen: newVisibility }
-    })
-  }
-
-   render() {
+       
      return (
-         <ul>
-         {
-           this.state.articles.map((article) => {
-             return 
-           })}
-        </ul>
+        <ArticleCard />
      )
    }
 }
 
 export default ArticleList;
-
-
