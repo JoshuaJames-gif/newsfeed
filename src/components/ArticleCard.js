@@ -8,7 +8,7 @@ const ArticleCard = ({title, description, link, created_at, author, isOpen, togg
         <h1 className="article_title">{title}</h1>
         
 
-        {isOpen ? 
+        {!isOpen ? 
         <div>
           <p className="article_desc">description: {description}</p>
           <h4>{author}</h4>
@@ -17,7 +17,7 @@ const ArticleCard = ({title, description, link, created_at, author, isOpen, togg
         </div>
           : null} 
 
-      <button className="btn" onClick={ toggleVisibility }>toggle</button>
+      <button className="btn" title={title} onClick={ toggleVisibility }>toggle</button>
       </li>
     </section>
   );

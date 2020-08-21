@@ -5,31 +5,32 @@ class ArticleList extends React.Component {
   
   state = {
     articles: {
-      "Creation timelines for the standard": {
-      title: "Creation timelines for the standard",
-      description: "Nullam euismod sodales venenatis.Morbi ultrices.",
-      author: "Josh",
+      "Airbnb bans all house parties worldwide": {
+        title: "Airbnb bans all house parties worldwide",
+        description: "Airbnb has banned house parties as part of its efforts to comply with limits on gatherings in the wake of the coronavirus pandemic.",
+      author: "N/A",
       created_at: '20 August 2020',
       link: "https://www.bbc.co.uk/news/technology-53849920",
       isOpen: false,
     },
     
-      "Let me know when you’re ready": {
-        title: "Let me know when you’re ready",
-      description: "Nor is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain.",
-      author: "Kojo",
-      created_at: '21 August 2020',
+      "10 charts on what happens after GCSEs": {
+        title: "10 charts on what happens after GCSEs",
+        description: "This year's exam results season has been like no other, but for the hundreds of thousands of students receiving their GCSE results, they will still have to decide what to do next.",
+      author: "Ben Butcher",
+      created_at: '20 August 2020',
       link: "https://www.bbc.co.uk/news/education-49249684",
       isOpen: false,
     },
     }
   }
-  toggleVisibility = (clickEvent) => {    
-      this.setState((currentState) => {
-         const newVisibility = !currentState.isOpen;
-         console.log(currentState.article)
-      return { ...currentState.articles, isOpen: newVisibility }
-     })  
+  toggleVisibility = (clickEvent) => {  
+    // console.log(clickEvent.target['title'])  
+    //   this.setState((currentState) => {
+    //      const newVisibility = !currentState.isOpen;
+    //      console.log(currentState.articles)
+    //     return { ...currentState.articles[clickEvent.target['title']], isOpen: newVisibility }
+    //  })  
   }
       render() {
        const articleArray = Object.entries(this.state.articles)
