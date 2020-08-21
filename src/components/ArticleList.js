@@ -4,7 +4,6 @@ import ArticleCard from './ArticleCard'
 class ArticleList extends React.Component {
   
   state = {
-    isOpen: false,
     articles: {
       "Creation timelines for the standard": {
       title: "Creation timelines for the standard",
@@ -16,6 +15,7 @@ class ArticleList extends React.Component {
     },
     
       "Let me know when you’re ready": {
+        title: "Let me know when you’re ready",
       description: "Nor is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain.",
       author: "Kojo",
       created_at: '21 August 2020',
@@ -24,27 +24,23 @@ class ArticleList extends React.Component {
     },
     }
   }
-  toggleVisibility = (clickEvent) => {
-      // this.setState((currentState) => {
-      
-      //   //    const newVisibility = !currentState.isOpen;
-      //   //    return { ...currentState.articles, [isOpen: newVisibility }
-      //   // })
-      // console.log(clickEvent)
-      // }
+  toggleVisibility = (clickEvent) => {    
+      this.setState((currentState) => {
+         const newVisibility = !currentState.isOpen;
+         console.log(currentState.article)
+      return { ...currentState.articles, isOpen: newVisibility }
+     })  
   }
       render() {
        const articleArray = Object.entries(this.state.articles)
-       console.log(articleArray)
-
-       
+    
      return (
        <main>
-         {articleArray.map(([articleName, data]) => {
-          return <ArticleCard key={articleName} {...data}/>
-  
-         })}
+         {articleArray.map(([articleName, article]) => {
 
+          return <ArticleCard key={articleName} {...article } toggleVisibility={this.toggleVisibility}/>
+
+         })}
        </main>
      )
    }

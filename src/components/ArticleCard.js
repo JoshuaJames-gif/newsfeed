@@ -1,9 +1,6 @@
 import React from 'react';
 
-const ArticleCard = ({title, description, link, created_at, author, isOpen}) => {
-  // const handleToggleClick = (event) => {
-
-  // }
+const ArticleCard = ({title, description, link, created_at, author, isOpen, toggleVisibility}) => {
 
   return (
     <section>
@@ -20,7 +17,7 @@ const ArticleCard = ({title, description, link, created_at, author, isOpen}) => 
         </div>
           : null} 
 
-      <button className="btn" onClick={() => this.toggleVisibility()}>toggle</button>
+      <button className="btn" onClick={ toggleVisibility }>toggle</button>
       </li>
     </section>
   );
